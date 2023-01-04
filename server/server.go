@@ -37,7 +37,6 @@ func upgradedWebSocket(c *websocket.Conn) {
 
 func main() {
 	app := fiber.New()
-	app.Get()
 	app.Use(filesystem.New(filesystem.Config{Root: http.Dir("../TestGame/")}))
 	app.Static("/", "../TestGame/")
 	app.Listen(":3000")
